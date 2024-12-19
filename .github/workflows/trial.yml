@@ -14,11 +14,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-
-    - name:  Install Google Chrome 
-      run:   |
-              chmod +x ./scripts/InstallChrome.sh
-                          ./scripts/InstallChrome.sh 
+        
+    - uses: browser-actions/setup-chrome@v1
+      with:
+       chrome-version: 114
         
     - name: Build with Maven
       run: |- 
